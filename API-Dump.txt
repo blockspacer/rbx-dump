@@ -1086,6 +1086,7 @@ Class SurfaceLight : Light
 Class Lighting : Instance [notCreatable]
 	Property Color3 Lighting.Ambient
 	Property float Lighting.Brightness
+	Property float Lighting.ClockTime
 	Property Color3 Lighting.ColorShift_Bottom
 	Property Color3 Lighting.ColorShift_Top
 	Property Color3 Lighting.FogColor
