@@ -361,7 +361,7 @@ Class DataStoreService : Instance [notCreatable]
 	Property bool DataStoreService.LegacyNamingScheme [LocalUserSecurity]
 	Function Instance DataStoreService:GetDataStore(string name, string scope = global)
 	Function Instance DataStoreService:GetGlobalDataStore()
-	Function Instance DataStoreService:GetOrderedDataStore(string name, string scope = global)
+	Function Instance DataStoreService:GetOrderedDataStore(string name, string scope = zero)
 	YieldFunction Variant DataStoreService:GetDataFromEmptyScopeDataStoreAsyncTemporary(string name, string key) [deprecated]
 Class Debris : Instance
 	Property int Debris.MaxItems [deprecated]
