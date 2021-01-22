@@ -544,9 +544,10 @@ Class GamepadService : Instance
 Class Geometry : Instance
 Class GlobalDataStore : Instance
 	Function Connection GlobalDataStore:OnUpdate(string key, Function callback)
-	YieldFunction Instance GlobalDataStore:FetchKeysAsync(string prefix =  , int pageSize = 0)
 	YieldFunction Variant GlobalDataStore:GetAsync(string key)
+	YieldFunction Tuple GlobalDataStore:GetVersionAsync(string key, string version)
 	YieldFunction Variant GlobalDataStore:IncrementAsync(string key, int delta = 1)
+	YieldFunction Instance GlobalDataStore:ListKeysAsync(string prefix =  , int pageSize = 0)
 	YieldFunction void GlobalDataStore:SetAsync(string key, Variant value)
 	YieldFunction Tuple GlobalDataStore:UpdateAsync(string key, Function transformFunction)
 Class OrderedDataStore : GlobalDataStore
