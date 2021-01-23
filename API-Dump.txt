@@ -359,6 +359,12 @@ Class SpecialMesh : FileMesh
 	Property MeshType SpecialMesh.MeshType
 Class DataStoreKeyInfo : Instance
 	Property string DataStoreKeyInfo.KeyName [readonly]
+Class DataStoreKeyVersionInfo : Instance
+	Property int DataStoreKeyVersionInfo.CreatedTime [readonly]
+	Property int DataStoreKeyVersionInfo.UpdatedTime [readonly]
+	Property string DataStoreKeyVersionInfo.Version [readonly]
+	Function Dictionary DataStoreKeyVersionInfo:GetMetaData()
+	Function Array DataStoreKeyVersionInfo:GetUserIds()
 Class DataStoreService : Instance [notCreatable]
 	Property bool DataStoreService.AutomaticRetry [LocalUserSecurity]
 	Property bool DataStoreService.LegacyNamingScheme [LocalUserSecurity]
