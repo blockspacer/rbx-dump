@@ -357,6 +357,8 @@ Class FileMesh : DataModelMesh
 	Property Content FileMesh.TextureId
 Class SpecialMesh : FileMesh
 	Property MeshType SpecialMesh.MeshType
+Class DataStoreKeyInfo : Instance
+	Property string DataStoreKeyInfo.KeyName [readonly]
 Class DataStoreService : Instance [notCreatable]
 	Property bool DataStoreService.AutomaticRetry [LocalUserSecurity]
 	Property bool DataStoreService.LegacyNamingScheme [LocalUserSecurity]
