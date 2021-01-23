@@ -543,11 +543,13 @@ Class GameSettings : Instance [notbrowsable]
 Class GamepadService : Instance
 Class Geometry : Instance
 Class GlobalDataStore : Instance
+	Property SortDirection GlobalDataStore.SortDirection [readonly]
 	Function Connection GlobalDataStore:OnUpdate(string key, Function callback)
 	YieldFunction Variant GlobalDataStore:GetAsync(string key)
 	YieldFunction Tuple GlobalDataStore:GetVersionAsync(string key, string version)
 	YieldFunction Variant GlobalDataStore:IncrementAsync(string key, int delta = 1)
 	YieldFunction Instance GlobalDataStore:ListKeysAsync(string prefix =  , int pageSize = 0)
+	YieldFunction Instance GlobalDataStore:ListVersionsAsync(string key, SortDirection sortDirection = Ascending, int minValue = 0, int maxValue = 0, int pageSize = 0)
 	YieldFunction void GlobalDataStore:SetAsync(string key, Variant value)
 	YieldFunction Tuple GlobalDataStore:UpdateAsync(string key, Function transformFunction)
 Class OrderedDataStore : GlobalDataStore
@@ -3200,6 +3202,9 @@ Enum SleepAdjustMethod
 	EnumItem SleepAdjustMethod.None : 0
 	EnumItem SleepAdjustMethod.LastSample : 1
 	EnumItem SleepAdjustMethod.AverageInterval : 2
+Enum SortDirection
+	EnumItem SortDirection.Ascending : 0
+	EnumItem SortDirection.Descending : 1
 Enum SoundType
 	EnumItem SoundType.NoSound : 0
 	EnumItem SoundType.Boing : 1
