@@ -358,6 +358,12 @@ Class FileMesh : DataModelMesh
 Class SpecialMesh : FileMesh
 	Property MeshType SpecialMesh.MeshType
 Class DataStoreIncrementOptions : Instance
+	Function Dictionary DataStoreIncrementOptions:GetMetaData()
+	Function void DataStoreIncrementOptions:SetMetaData(Dictionary attributes)
+Class DataStoreInfo : Instance
+	Property int DataStoreInfo.CreatedTime [readonly]
+	Property string DataStoreInfo.DataStoreName [readonly]
+	Property int DataStoreInfo.Updated [readonly]
 Class DataStoreKeyInfo : Instance
 	Property string DataStoreKeyInfo.KeyName [readonly]
 Class DataStoreKeyVersionInfo : Instance
@@ -374,6 +380,8 @@ Class DataStoreService : Instance [notCreatable]
 	Function Instance DataStoreService:GetOrderedDataStore(string name, string scope = global)
 	YieldFunction Variant DataStoreService:GetDataFromEmptyScopeDataStoreAsyncTemporary(string name, string key) [deprecated]
 Class DataStoreSetOptions : Instance
+	Function Dictionary DataStoreSetOptions:GetMetaData()
+	Function void DataStoreSetOptions:SetMetaData(Dictionary attributes)
 Class Debris : Instance
 	Property int Debris.MaxItems [deprecated]
 	Function void Debris:AddItem(Instance item, double lifetime = 10)
