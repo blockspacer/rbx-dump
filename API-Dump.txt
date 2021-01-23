@@ -545,13 +545,14 @@ Class Geometry : Instance
 Class GlobalDataStore : Instance
 	Function Connection GlobalDataStore:OnUpdate(string key, Function callback)
 	YieldFunction Variant GlobalDataStore:GetAsync(string key)
-	YieldFunction Tuple GlobalDataStore:GetVersionAsync(string key, string version)
 	YieldFunction Variant GlobalDataStore:IncrementAsync(string key, int delta = 1)
-	YieldFunction Instance GlobalDataStore:ListKeysAsync(string prefix =  , int pageSize = 0)
-	YieldFunction Instance GlobalDataStore:ListVersionsAsync(string key, SortDirection sortDirection = Ascending, int minValue = 0, int maxValue = 0, int pageSize = 0)
-	YieldFunction void GlobalDataStore:RemoveVersionAsync(string key, string version)
 	YieldFunction void GlobalDataStore:SetAsync(string key, Variant value)
 	YieldFunction Tuple GlobalDataStore:UpdateAsync(string key, Function transformFunction)
+Class DataStore : GlobalDataStore
+	YieldFunction Tuple DataStore:GetVersionAsync(string key, string version)
+	YieldFunction Instance DataStore:ListKeysAsync(string prefix =  , int pageSize = 0)
+	YieldFunction Instance DataStore:ListVersionsAsync(string key, SortDirection sortDirection = Ascending, int minValue = 0, int maxValue = 0, int pageSize = 0)
+	YieldFunction void DataStore:RemoveVersionAsync(string key, string version)
 Class OrderedDataStore : GlobalDataStore
 	YieldFunction Instance OrderedDataStore:GetSortedAsync(bool ascending, int pagesize, Variant minValue, Variant maxValue)
 Class GroupService : Instance [notCreatable]
