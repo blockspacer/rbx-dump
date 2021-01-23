@@ -543,7 +543,6 @@ Class GameSettings : Instance [notbrowsable]
 Class GamepadService : Instance
 Class Geometry : Instance
 Class GlobalDataStore : Instance
-	Property SortDirection GlobalDataStore.SortDirection [readonly]
 	Function Connection GlobalDataStore:OnUpdate(string key, Function callback)
 	YieldFunction Variant GlobalDataStore:GetAsync(string key)
 	YieldFunction Tuple GlobalDataStore:GetVersionAsync(string key, string version)
