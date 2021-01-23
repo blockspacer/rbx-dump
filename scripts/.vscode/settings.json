@@ -1,0 +1,11 @@
+{
+    "Lua.diagnostics.ignore": [
+        "UnbindCoreAction",
+        "OverrideMouseIconBehavior"
+    ],
+    "Lua.diagnostics.disable": [
+        "lowercase-global",
+        "err-esc",
+        "undefined-rbx-member"
+    ]
+}
