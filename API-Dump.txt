@@ -35,6 +35,10 @@ Class Instance [notbrowsable]
 	Event Instance.DescendantRemoving(Instance descendant)
 	Event Instance.childAdded(Instance child) [deprecated]
 Class ABTestService : Instance
+	Function ABTestLoadingStatus ABTestService:GetBrowserTrackerABTestLoadingStatus() [LocalUserSecurity]
+	Function ABTestLoadingStatus ABTestService:GetUserABTestLoadingStatus() [LocalUserSecurity]
+	YieldFunction void ABTestService:WaitUntilBrowserTrackerABTestsInitialized() [LocalUserSecurity]
+	YieldFunction void ABTestService:WaitUntilUserABTestsInitialized() [LocalUserSecurity]
 	Event ABTestService.OnBrowserTrackerABTestLoadingStatusChangedSignal(ABTestLoadingStatus status) [LocalUserSecurity]
 	Event ABTestService.OnUserABTestLoadingStatusChangedSignal(ABTestLoadingStatus status, double userId) [LocalUserSecurity]
 Class Accoutrement : Instance
