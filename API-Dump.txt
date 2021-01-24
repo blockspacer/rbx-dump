@@ -107,7 +107,7 @@ Class BadgeService : Instance [notCreatable]
 	YieldFunction bool BadgeService:UserHasBadge(int userId, int badgeId)
 	Event BadgeService.BadgeAwarded(string message, int userId, int badgeId) [RobloxScriptSecurity]
 Class BasePlayerGui : Instance
-Class CoreGui : BasePlayerGui [notbrowsable]
+Class CoreGui : BasePlayerGui [notbrowsable] [notCreatable]
 	Property Object CoreGui.SelectionImageObject [RobloxScriptSecurity]
 	Property int CoreGui.Version [readonly]
 Class PlayerGui : BasePlayerGui [notCreatable]
