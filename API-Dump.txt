@@ -34,7 +34,9 @@ Class Instance [notbrowsable]
 	Event Instance.DescendantAdded(Instance descendant)
 	Event Instance.DescendantRemoving(Instance descendant)
 	Event Instance.childAdded(Instance child) [deprecated]
-Class ABTestService : Instance [notCreatable]
+Class ABTestService : Instance
+	Event ABTestService.OnBrowserTrackerABTestLoadingStatusChangedSignal(ABTestLoadingStatus status) [LocalUserSecurity]
+	Event ABTestService.OnUserABTestLoadingStatusChangedSignal(ABTestLoadingStatus status, double userId) [LocalUserSecurity]
 Class Accoutrement : Instance
 	Property Vector3 Accoutrement.AttachmentForward
 	Property CoordinateFrame Accoutrement.AttachmentPoint
@@ -2297,6 +2299,13 @@ Enum AASamples
 	EnumItem AASamples.None : 1
 	EnumItem AASamples.4 : 4
 	EnumItem AASamples.8 : 8
+Enum ABTestLoadingStatus
+	EnumItem ABTestLoadingStatus.Error : 3
+	EnumItem ABTestLoadingStatus.Initialized : 2
+	EnumItem ABTestLoadingStatus.None : 0
+	EnumItem ABTestLoadingStatus.Pending : 1
+	EnumItem ABTestLoadingStatus.ShutOff : 5
+	EnumItem ABTestLoadingStatus.TimedOut : 4
 Enum AccessType
 	EnumItem AccessType.Me : 0
 	EnumItem AccessType.Friends : 1
