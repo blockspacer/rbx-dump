@@ -378,7 +378,9 @@ Class DataStoreService : Instance [notCreatable]
 	Function Instance DataStoreService:GetDataStore(string name, string scope = global)
 	Function Instance DataStoreService:GetGlobalDataStore()
 	Function Instance DataStoreService:GetOrderedDataStore(string name, string scope = global)
+	Function int DataStoreService:GetRequestBudgetForRequestTyoe(DataStoreRequestType requestType)
 	YieldFunction Variant DataStoreService:GetDataFromEmptyScopeDataStoreAsyncTemporary(string name, string key) [deprecated]
+	YieldFunction Instance DataStoreService:GetDataStoresAsync(string prefix = , int pageSize = 0)
 Class DataStoreSetOptions : Instance
 	Function Dictionary DataStoreSetOptions:GetMetaData()
 	Function void DataStoreSetOptions:SetMetaData(Dictionary attributes)
@@ -561,7 +563,7 @@ Class GameSettings : Instance [notbrowsable]
 Class GamepadService : Instance
 Class Geometry : Instance
 Class GlobalDataStore : Instance
-	Function Connection GlobalDataStore:OnUpdate(string key, Function callback)
+	Function Connection GlobalDataStore:OnUpdate(string key, Function callback) [deprecated]
 	YieldFunction Tuple GlobalDataStore:GetAsync(string key)
 	YieldFunction Variant GlobalDataStore:IncrementAsync(string key, int delta = 1, Array userIds = {}, Instance options = nil)
 	YieldFunction Tuple GlobalDataStore:RemoveAsync(string key)
@@ -2438,6 +2440,13 @@ Enum CustomCameraMode
 	EnumItem CustomCameraMode.Default : 0
 	EnumItem CustomCameraMode.Follow : 2
 	EnumItem CustomCameraMode.Classic : 1
+Enum DataStoreRequestType
+	EnumItem DataStoreRequestType.GetAsync : 0
+	EnumItem DataStoreRequestType.GetSortedAsync : 3
+	EnumItem DataStoreRequestType.OnUpdate : 5
+	EnumItem DataStoreRequestType.SetIncrementAsync : 1
+	EnumItem DataStoreRequestType.SetIncrementSortedAsync : 4
+	EnumItem DataStoreRequestType.UpdateAsync : 2
 Enum DevCameraOcclusionMode
 	EnumItem DevCameraOcclusionMode.Zoom : 0
 	EnumItem DevCameraOcclusionMode.Invisicam : 1
