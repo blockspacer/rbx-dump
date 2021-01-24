@@ -365,6 +365,7 @@ Class DataStoreInfo : Instance
 	Property string DataStoreInfo.DataStoreName [readonly]
 	Property int DataStoreInfo.Updated [readonly]
 Class DataStoreKeyInfo : Instance
+	Property string DataStoreKeyInfo.KeyName [readonly]
 Class DataStoreKeyVersionInfo : Instance
 	Property int DataStoreKeyVersionInfo.CreatedTime [readonly]
 	Property int DataStoreKeyVersionInfo.UpdatedTime [readonly]
