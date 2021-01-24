@@ -1531,8 +1531,10 @@ Class Pages : Instance
 	Property bool Pages.IsFinished [readonly]
 	Function Array Pages:GetCurrentPage()
 	YieldFunction void Pages:AdvanceToNextPageAsync()
+Class DataStoreEnumerationPages : Pages
 Class DataStoreKeyPages : Pages
 Class DataStorePages : Pages
+Class DataStoreVersionPages : Pages
 Class FriendPages : Pages
 Class StandardPages : Pages
 Class PartOperationAsset : Instance
