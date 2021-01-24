@@ -365,7 +365,6 @@ Class DataStoreInfo : Instance
 	Property string DataStoreInfo.DataStoreName [readonly]
 	Property int DataStoreInfo.Updated [readonly]
 Class DataStoreKeyInfo : Instance
-	Property string DataStoreKeyInfo.KeyName [readonly]
 Class DataStoreKeyVersionInfo : Instance
 	Property int DataStoreKeyVersionInfo.CreatedTime [readonly]
 	Property int DataStoreKeyVersionInfo.UpdatedTime [readonly]
@@ -564,6 +563,7 @@ Class GlobalDataStore : Instance
 	Function Connection GlobalDataStore:OnUpdate(string key, Function callback)
 	YieldFunction Tuple GlobalDataStore:GetAsync(string key)
 	YieldFunction Variant GlobalDataStore:IncrementAsync(string key, int delta = 1, Array userIds = {}, Instance options = nil)
+	YieldFunction Tuple GlobalDataStore:RemoveAsync(string key)
 	YieldFunction Variant GlobalDataStore:SetAsync(string key, Variant value, Array userIds = {}, Instance options = nil)
 	YieldFunction Tuple GlobalDataStore:UpdateAsync(string key, Function transformFunction)
 Class DataStore : GlobalDataStore
