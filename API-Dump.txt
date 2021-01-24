@@ -374,8 +374,8 @@ Class DataStoreInfo : Instance
 Class DataStoreKeyInfo : Instance
 	Property string DataStoreKeyInfo.KeyName [readonly]
 Class DataStoreKeyVersionInfo : Instance
-	Property int DataStoreKeyVersionInfo.CreatedTime [readonly]
-	Property int DataStoreKeyVersionInfo.UpdatedTime [readonly]
+	Property double DataStoreKeyVersionInfo.CreatedTime [readonly]
+	Property double DataStoreKeyVersionInfo.UpdatedTime [readonly]
 	Property string DataStoreKeyVersionInfo.Version [readonly]
 	Function Dictionary DataStoreKeyVersionInfo:GetMetaData()
 	Function Array DataStoreKeyVersionInfo:GetUserIds()
