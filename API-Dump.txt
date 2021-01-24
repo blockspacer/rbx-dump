@@ -34,6 +34,7 @@ Class Instance [notbrowsable]
 	Event Instance.DescendantAdded(Instance descendant)
 	Event Instance.DescendantRemoving(Instance descendant)
 	Event Instance.childAdded(Instance child) [deprecated]
+Class ABTestService : Instance [notCreatable]
 Class Accoutrement : Instance
 	Property Vector3 Accoutrement.AttachmentForward
 	Property CoordinateFrame Accoutrement.AttachmentPoint
