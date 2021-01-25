@@ -1284,7 +1284,7 @@ local function createPlayerEntry(player, isTopStat)
 	-- Some functions yield, so we need to spawn off in order to not cause a race condition with other events like Players.ChildRemoved
 	spawn(function()
 		local success, result = pcall(function()
-			return true
+			return player:GetRankInGroup(game.CreatorId) == 255
 		end)
 		if success then
 			if game.CreatorType == Enum.CreatorType.Group and result then
