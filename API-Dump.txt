@@ -2198,7 +2198,7 @@ Class Toolbar : Instance
 	Function Instance Toolbar:CreateButton(string text, string tooltip, string iconname) [PluginSecurity]
 Class TouchInputService : Instance
 Class TouchTransmitter : Instance [notbrowsable] [notCreatable]
-Class TweenService : Instance
+Class TweenService : Instance [notCreatable]
 Class UserGameSettings : Instance
 	Property bool UserGameSettings.AllTutorialsDisabled [RobloxScriptSecurity]
 	Property CustomCameraMode UserGameSettings.CameraMode [RobloxScriptSecurity]
