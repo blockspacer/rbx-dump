@@ -341,6 +341,7 @@ Class CookiesService : Instance
 	Function void CookiesService:DeleteCookieValue(string key) [RobloxSecurity]
 	Function string CookiesService:GetCookieValue(string key) [RobloxSecurity]
 	Function void CookiesService:SetCookieValue(string key, string value) [RobloxSecurity]
+Class CorePackages : Instance [notCreatable]
 Class CustomEvent : Instance [deprecated]
 	Function Objects CustomEvent:GetAttachedReceivers()
 	Function void CustomEvent:SetValue(float newValue)
