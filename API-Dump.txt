@@ -387,8 +387,7 @@ Class DataStoreService : Instance [notCreatable]
 	Function Instance DataStoreService:GetGlobalDataStore()
 	Function Instance DataStoreService:GetOrderedDataStore(string name, string scope = global)
 	Function int DataStoreService:GetRequestBudgetForRequestType(DataStoreRequestType requestType)
-	YieldFunction Variant DataStoreService:GetDataFromEmptyScopeDataStoreAsyncTemporary(string name, string key) [deprecated]
-	YieldFunction Instance DataStoreService:GetDataStoresAsync(string prefix = , int pageSize = 0)
+	YieldFunction Tuple DataStoreService:GetDataFromEmptyScopeDataStoreAsyncTemporary(string name, string key) [deprecated]
 Class DataStoreSetOptions : Instance
 	Function Dictionary DataStoreSetOptions:GetMetaData()
 	Function void DataStoreSetOptions:SetMetaData(Dictionary attributes)
@@ -1542,7 +1541,6 @@ Class Pages : Instance
 	Property bool Pages.IsFinished [readonly]
 	Function Array Pages:GetCurrentPage()
 	YieldFunction void Pages:AdvanceToNextPageAsync()
-Class DataStoreEnumerationPages : Pages
 Class DataStoreKeyPages : Pages
 Class DataStorePages : Pages
 Class DataStoreVersionPages : Pages
