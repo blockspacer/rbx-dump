@@ -388,6 +388,7 @@ Class DataStoreService : Instance [notCreatable]
 	Function Instance DataStoreService:GetOrderedDataStore(string name, string scope = global)
 	Function int DataStoreService:GetRequestBudgetForRequestType(DataStoreRequestType requestType)
 	YieldFunction Tuple DataStoreService:GetDataFromEmptyScopeDataStoreAsyncTemporary(string name, string key) [deprecated]
+	YieldFunction Instance DataStoreService:ListDataStoresAsync(string prefix = , int pageSize = 1)
 Class DataStoreSetOptions : Instance
 	Function Dictionary DataStoreSetOptions:GetMetaData()
 	Function void DataStoreSetOptions:SetMetaData(Dictionary attributes)
@@ -574,7 +575,7 @@ Class GlobalDataStore : Instance
 	YieldFunction Tuple GlobalDataStore:GetAsync(string key)
 	YieldFunction Variant GlobalDataStore:IncrementAsync(string key, int delta = 1, Array userIds = {}, Instance options = nil)
 	YieldFunction Tuple GlobalDataStore:RemoveAsync(string key)
-	YieldFunction Variant GlobalDataStore:SetAsync(string key, Variant value, Array userIds = {}, Instance options = nil)
+	YieldFunction Tuple GlobalDataStore:SetAsync(string key, Variant value, Array userIds = {}, Instance options = nil)
 	YieldFunction Tuple GlobalDataStore:UpdateAsync(string key, Function transformFunction)
 Class DataStore : GlobalDataStore
 	YieldFunction Tuple DataStore:GetVersionAsync(string key, string version)
@@ -1541,6 +1542,7 @@ Class Pages : Instance
 	Property bool Pages.IsFinished [readonly]
 	Function Array Pages:GetCurrentPage()
 	YieldFunction void Pages:AdvanceToNextPageAsync()
+Class DataStoreEnumerationPages : Pages
 Class DataStoreKeyPages : Pages
 Class DataStorePages : Pages
 Class DataStoreVersionPages : Pages
@@ -2198,6 +2200,7 @@ Class Toolbar : Instance
 Class TouchInputService : Instance
 Class TouchTransmitter : Instance [notbrowsable] [notCreatable]
 Class TweenService : Instance [notCreatable]
+	Function Instance TweenService:Create(Instance instance, TweenInfo tweenInfo, Dictionary propertyTable)
 Class UserGameSettings : Instance
 	Property bool UserGameSettings.AllTutorialsDisabled [RobloxScriptSecurity]
 	Property CustomCameraMode UserGameSettings.CameraMode [RobloxScriptSecurity]
