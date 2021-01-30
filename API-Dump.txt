@@ -1,6 +1,3 @@
-ERROR: Duplicate declaration of enum SortDirection:
-	SortDirection
-	SortDirection
 Class Instance [notbrowsable]
 	Property bool Instance.Archivable
 	Property string Instance.ClassName [readonly]
@@ -2203,11 +2200,11 @@ Class Toolbar : Instance
 Class TouchInputService : Instance
 Class TouchTransmitter : Instance [notbrowsable] [notCreatable]
 Class TweenBase : Instance
-	Property SortDirection TweenBase.PlayBackState [readonly]
+	Property PlayBackState TweenBase.PlayBackState [readonly]
 	Function void TweenBase:Cancel()
 	Function void TweenBase:Pause()
 	Function void TweenBase:Play()
-	Event TweenBase.Completed(SortDirection playBackState)
+	Event TweenBase.Completed(PlayBackState playBackState)
 Class TweenV2 : TweenBase
 	Property Object TweenV2.Instance [readonly]
 	Property TweenInfo TweenV2.TweenInfo [readonly]
@@ -3102,6 +3099,13 @@ Enum Platform
 	EnumItem Platform.BeOS : 17
 	EnumItem Platform.UWP : 18
 	EnumItem Platform.None : 19
+Enum PlayBackState
+	EnumItem PlayBackState.Begin : 0
+	EnumItem PlayBackState.Cancelled : 5
+	EnumItem PlayBackState.Completed : 4
+	EnumItem PlayBackState.Delayed : 1
+	EnumItem PlayBackState.Paused : 3
+	EnumItem PlayBackState.Playing : 2
 Enum PlayerActions
 	EnumItem PlayerActions.CharacterForward : 0
 	EnumItem PlayerActions.CharacterBackward : 1
@@ -3261,13 +3265,6 @@ Enum SleepAdjustMethod
 	EnumItem SleepAdjustMethod.None : 0
 	EnumItem SleepAdjustMethod.LastSample : 1
 	EnumItem SleepAdjustMethod.AverageInterval : 2
-Enum SortDirection
-	EnumItem SortDirection.Begin : 0
-	EnumItem SortDirection.Cancelled : 5
-	EnumItem SortDirection.Completed : 4
-	EnumItem SortDirection.Delayed : 1
-	EnumItem SortDirection.Paused : 3
-	EnumItem SortDirection.Playing : 2
 Enum SortDirection
 	EnumItem SortDirection.Ascending : 0
 	EnumItem SortDirection.Descending : 1
