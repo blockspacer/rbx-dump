@@ -1,3 +1,6 @@
+ERROR: Duplicate declaration of enum SortDirection:
+	SortDirection
+	SortDirection
 Class Instance [notbrowsable]
 	Property bool Instance.Archivable
 	Property string Instance.ClassName [readonly]
@@ -2199,6 +2202,15 @@ Class Toolbar : Instance
 	Function Instance Toolbar:CreateButton(string text, string tooltip, string iconname) [PluginSecurity]
 Class TouchInputService : Instance
 Class TouchTransmitter : Instance [notbrowsable] [notCreatable]
+Class TweenBase : Instance
+	Property SortDirection TweenBase.PlayBackState [readonly]
+	Function void TweenBase:Cancel()
+	Function void TweenBase:Pause()
+	Function void TweenBase:Play()
+	Event TweenBase.Completed(SortDirection playBackState)
+Class TweenV2 : TweenBase
+	Property Object TweenV2.Instance [readonly]
+	Property TweenInfo TweenV2.TweenInfo [readonly]
 Class TweenService : Instance [notCreatable]
 	Function Instance TweenService:Create(Instance instance, TweenInfo tweenInfo, Dictionary propertyTable)
 Class UserGameSettings : Instance
@@ -3249,6 +3261,13 @@ Enum SleepAdjustMethod
 	EnumItem SleepAdjustMethod.None : 0
 	EnumItem SleepAdjustMethod.LastSample : 1
 	EnumItem SleepAdjustMethod.AverageInterval : 2
+Enum SortDirection
+	EnumItem SortDirection.Begin : 0
+	EnumItem SortDirection.Cancelled : 5
+	EnumItem SortDirection.Completed : 4
+	EnumItem SortDirection.Delayed : 1
+	EnumItem SortDirection.Paused : 3
+	EnumItem SortDirection.Playing : 2
 Enum SortDirection
 	EnumItem SortDirection.Ascending : 0
 	EnumItem SortDirection.Descending : 1
