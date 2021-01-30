@@ -2201,6 +2201,7 @@ Class TouchInputService : Instance
 Class TouchTransmitter : Instance [notbrowsable] [notCreatable]
 Class TweenBase : Instance
 	Property PlayBackState TweenBase.PlayBackState [readonly]
+	Property long TweenBase.SomeLong [readonly]
 	Function void TweenBase:Cancel()
 	Function void TweenBase:Pause()
 	Function void TweenBase:Play()
