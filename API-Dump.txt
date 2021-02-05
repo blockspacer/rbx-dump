@@ -1,15 +1,16 @@
 Class Instance [notbrowsable]
 	Property bool Instance.Archivable
 	Property string Instance.ClassName [readonly]
-	Property int Instance.DataCost [readonly] [RobloxPlaceSecurity]
+	Property int Instance.DataCost [deprecated] [readonly] [LocalUserSecurity]
 	Property string Instance.Name
 	Property Object Instance.Parent
 	Property bool Instance.RobloxLocked [PluginSecurity]
-	Property bool Instance.archivable [hidden]
+	Property bool Instance.archivable [deprecated]
 	Property string Instance.className [deprecated] [readonly]
 	Function void Instance:ClearAllChildren()
 	Function Instance Instance:Clone()
 	Function void Instance:Destroy()
+	Function Instance Instance:FindFirstAncestor(string name)
 	Function Instance Instance:FindFirstChild(string name, bool recursive = false)
 	Function Objects Instance:GetChildren()
 	Function string Instance:GetDebugId(int scopeLength = 4) [notbrowsable] [PluginSecurity]
@@ -371,7 +372,7 @@ Class DataStoreIncrementOptions : Instance
 Class DataStoreInfo : Instance
 	Property int64 DataStoreInfo.CreatedTime [readonly]
 	Property string DataStoreInfo.DataStoreName [readonly]
-	Property int64 DataStoreInfo.Updated [readonly]
+	Property int64 DataStoreInfo.UpdatedTime [readonly]
 Class DataStoreKeyInfo : Instance
 	Property string DataStoreKeyInfo.KeyName [readonly]
 Class DataStoreKeyVersionInfo : Instance
@@ -570,6 +571,9 @@ Class GameSettings : Instance [notbrowsable]
 	Event GameSettings.VideoRecordingChangeRequest(bool recording) [RobloxScriptSecurity]
 Class GamepadService : Instance
 Class Geometry : Instance
+Class GetDataStoreOptions : Instance
+	Property bool GetDataStoreOptions.AllScopes
+	Function void GetDataStoreOptions:SetExperimentalFeatures(Dictionary experimentalFeatures)
 Class GlobalDataStore : Instance
 	Function Connection GlobalDataStore:OnUpdate(string key, Function callback) [deprecated]
 	YieldFunction Tuple GlobalDataStore:GetAsync(string key)
