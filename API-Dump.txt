@@ -49,7 +49,7 @@ Class Accoutrement : Instance
 	Property Vector3 Accoutrement.AttachmentRight
 	Property Vector3 Accoutrement.AttachmentUp
 Class Accessory : Accoutrement
-Class Hat : Accoutrement [deprecated]
+Class Hat : Accoutrement
 Class AdService : Instance [notCreatable]
 	Function void AdService:ShowVideoAd()
 	Event AdService.VideoAdClosed(bool adShown)
