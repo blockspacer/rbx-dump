@@ -117,7 +117,7 @@ Class PlayerGui : BasePlayerGui [notCreatable]
 	Function void PlayerGui:SetTopbarTransparency(float transparency) [deprecated]
 	Event PlayerGui.TopbarTransparencyChangedSignal(float transparency) [deprecated]
 Class StarterGui : BasePlayerGui
-	Property bool StarterGui.ResetPlayerGuiOnSpawn
+	Property bool StarterGui.ResetPlayerGuiOnSpawn [deprecated]
 	Property bool StarterGui.ShowDevelopmentGui
 	Function bool StarterGui:GetCoreGuiEnabled(CoreGuiType coreGuiType)
 	Function void StarterGui:RegisterGetCore(string parameterName, Function getFunction) [RobloxScriptSecurity]
@@ -222,12 +222,12 @@ Class Camera : Instance
 	Function CoordinateFrame Camera:GetRenderCFrame()
 	Function float Camera:GetRoll()
 	Function float Camera:GetTiltSpeed()
-	Function void Camera:Interpolate(CoordinateFrame endPos, CoordinateFrame endFocus, float duration)
-	Function void Camera:PanUnits(int units)
+	Function void Camera:Interpolate(CoordinateFrame endPos, CoordinateFrame endFocus, float duration) [deprecated]
+	Function void Camera:PanUnits(int units) [deprecated]
 	Function Ray Camera:ScreenPointToRay(float x, float y, float depth = 0)
 	Function void Camera:SetCameraPanMode(CameraPanMode mode = Classic)
 	Function void Camera:SetRoll(float rollAngle)
-	Function bool Camera:TiltUnits(int units)
+	Function bool Camera:TiltUnits(int units) [deprecated]
 	Function Ray Camera:ViewportPointToRay(float x, float y, float depth = 0)
 	Function Tuple Camera:WorldToScreenPoint(Vector3 worldPoint)
 	Function Tuple Camera:WorldToViewportPoint(Vector3 worldPoint)
@@ -265,9 +265,9 @@ Class Shirt : Clothing
 Class ShirtGraphic : CharacterAppearance
 	Property Content ShirtGraphic.Graphic
 Class Skin : CharacterAppearance [deprecated]
-	Property BrickColor Skin.SkinColor
+	Property BrickColor Skin.SkinColor [deprecated]
 Class Chat : Instance [notCreatable]
-	Function void Chat:Chat(Instance partOrCharacter, string message, ChatColor color = Blue)
+	Function void Chat:Chat(Instance partOrCharacter, string message, ChatColor color = Blue) [deprecated]
 	YieldFunction string Chat:FilterStringForPlayerAsync(string stringToFilter, Instance playerToFilterFor)
 	Event Chat.Chatted(Instance part, string message, ChatColor color)
 Class ChatFilter : Instance [notCreatable]
@@ -279,9 +279,9 @@ Class ClickDetector : Instance
 	Event ClickDetector.mouseClick(Instance playerWhoClicked) [deprecated]
 Class ClusterPacketCache : Instance
 Class CollectionService : Instance
-	Function Objects CollectionService:GetCollection(string class)
-	Event CollectionService.ItemAdded(Instance instance)
-	Event CollectionService.ItemRemoved(Instance instance)
+	Function Objects CollectionService:GetCollection(string class) [deprecated]
+	Event CollectionService.ItemAdded(Instance instance) [deprecated]
+	Event CollectionService.ItemRemoved(Instance instance) [deprecated]
 Class Color3Value : Instance
 	Property Color3 Color3Value.Value
 	Event Color3Value.Changed(Color3 value)
