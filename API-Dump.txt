@@ -49,17 +49,17 @@ Class Accoutrement : Instance
 	Property Vector3 Accoutrement.AttachmentRight
 	Property Vector3 Accoutrement.AttachmentUp
 Class Accessory : Accoutrement
-Class Hat : Accoutrement
+Class Hat : Accoutrement [deprecated]
 Class AdService : Instance [notCreatable]
-	Function void AdService:ShowVideoAd()
-	Event AdService.VideoAdClosed(bool adShown)
+	Function void AdService:ShowVideoAd() [deprecated]
+	Event AdService.VideoAdClosed(bool adShown) [deprecated]
 Class AdvancedDragger : Instance
 Class Animation : Instance
 	Property Content Animation.AnimationId
-Class AnimationController : Instance
-	Function Array AnimationController:GetPlayingAnimationTracks()
-	Function Instance AnimationController:LoadAnimation(Instance animation)
-	Event AnimationController.AnimationPlayed(Instance animationTrack)
+Class AnimationController : Instance [deprecated]
+	Function Array AnimationController:GetPlayingAnimationTracks() [deprecated]
+	Function Instance AnimationController:LoadAnimation(Instance animation) [deprecated]
+	Event AnimationController.AnimationPlayed(Instance animationTrack) [deprecated]
 Class AnimationTrack : Instance
 	Property Object AnimationTrack.Animation [readonly]
 	Property bool AnimationTrack.IsPlaying [readonly]
@@ -83,7 +83,7 @@ Class AssetService : Instance
 	YieldFunction int64 AssetService:CreatePlaceAsync(string placeName, int64 templatePlaceID, string description = )
 	YieldFunction int64 AssetService:CreatePlaceInPlayerInventoryAsync(Instance player, string placeName, int64 templatePlaceID, string description = )
 	YieldFunction Dictionary AssetService:GetAssetVersions(int64 placeId, int pageNum = 1)
-	YieldFunction int64 AssetService:GetCreatorAssetID(int64 creationID)
+	YieldFunction int64 AssetService:GetCreatorAssetID(int64 creationID) [deprecated]
 	YieldFunction Instance AssetService:GetGamePlacesAsync()
 	YieldFunction Dictionary AssetService:GetPlacePermissions(int64 placeId)
 	YieldFunction bool AssetService:RevertAsset(int64 placeId, int versionNumber)
@@ -92,9 +92,9 @@ Class AssetService : Instance
 Class Attachment : Instance
 	Property CoordinateFrame Attachment.CFrame
 	Property Vector3 Attachment.Position
-	Property Vector3 Attachment.Rotation
+	Property Vector3 Attachment.Rotation [deprecated] [hidden]
 	Property Vector3 Attachment.WorldPosition [readonly]
-	Property Vector3 Attachment.WorldRotation [readonly]
+	Property Vector3 Attachment.WorldRotation [deprecated] [hidden] [readonly]
 Class BadgeService : Instance [notCreatable]
 	Function void BadgeService:SetAwardBadgeUrl(string url) [LocalUserSecurity]
 	Function void BadgeService:SetHasBadgeCooldown(int seconds) [LocalUserSecurity]
@@ -103,9 +103,9 @@ Class BadgeService : Instance [notCreatable]
 	Function void BadgeService:SetIsBadgeLegalUrl(string url) [LocalUserSecurity]
 	Function void BadgeService:SetPlaceId(int64 placeId) [LocalUserSecurity]
 	YieldFunction bool BadgeService:AwardBadge(int64 userId, int64 badgeId)
-	YieldFunction bool BadgeService:IsDisabled(int64 badgeId)
-	YieldFunction bool BadgeService:IsLegal(int64 badgeId)
-	YieldFunction bool BadgeService:UserHasBadge(int64 userId, int64 badgeId)
+	YieldFunction bool BadgeService:IsDisabled(int64 badgeId) [deprecated]
+	YieldFunction bool BadgeService:IsLegal(int64 badgeId) [deprecated]
+	YieldFunction bool BadgeService:UserHasBadge(int64 userId, int64 badgeId) [deprecated]
 	Event BadgeService.BadgeAwarded(string message, int64 userId, int64 badgeId) [RobloxScriptSecurity]
 Class BasePlayerGui : Instance
 Class CoreGui : BasePlayerGui [notbrowsable] [notCreatable]
@@ -113,9 +113,9 @@ Class CoreGui : BasePlayerGui [notbrowsable] [notCreatable]
 	Property int CoreGui.Version [readonly]
 Class PlayerGui : BasePlayerGui [notCreatable]
 	Property Object PlayerGui.SelectionImageObject
-	Function float PlayerGui:GetTopbarTransparency()
-	Function void PlayerGui:SetTopbarTransparency(float transparency)
-	Event PlayerGui.TopbarTransparencyChangedSignal(float transparency)
+	Function float PlayerGui:GetTopbarTransparency() [deprecated]
+	Function void PlayerGui:SetTopbarTransparency(float transparency) [deprecated]
+	Event PlayerGui.TopbarTransparencyChangedSignal(float transparency) [deprecated]
 Class StarterGui : BasePlayerGui
 	Property bool StarterGui.ResetPlayerGuiOnSpawn
 	Property bool StarterGui.ShowDevelopmentGui
@@ -846,14 +846,14 @@ Class TextureTrail : GuiBase3d [deprecated]
 Class GuiItem : Instance
 Class Backpack : GuiItem
 Class BackpackItem : GuiItem
-	Property Content BackpackItem.TextureId
+	Property Content BackpackItem.TextureId [deprecated]
 Class HopperBin : BackpackItem [deprecated]
-	Property bool HopperBin.Active
-	Property BinType HopperBin.BinType
-	Function void HopperBin:Disable() [RobloxScriptSecurity]
-	Function void HopperBin:ToggleSelect() [RobloxScriptSecurity]
-	Event HopperBin.Deselected()
-	Event HopperBin.Selected(Instance mouse)
+	Property bool HopperBin.Active [deprecated]
+	Property BinType HopperBin.BinType [deprecated]
+	Function void HopperBin:Disable() [deprecated] [RobloxScriptSecurity]
+	Function void HopperBin:ToggleSelect() [deprecated] [RobloxScriptSecurity]
+	Event HopperBin.Deselected() [deprecated]
+	Event HopperBin.Selected(Instance mouse) [deprecated]
 Class Tool : BackpackItem
 	Property bool Tool.CanBeDropped
 	Property bool Tool.Enabled
@@ -871,7 +871,7 @@ Class Tool : BackpackItem
 	Event Tool.Equipped(Instance mouse)
 	Event Tool.Unequipped()
 Class Flag : Tool [deprecated]
-	Property BrickColor Flag.TeamColor
+	Property BrickColor Flag.TeamColor [deprecated]
 Class ButtonBindingWidget : GuiItem
 Class GuiRoot : GuiItem [notCreatable]
 Class Hopper : GuiItem [deprecated]
