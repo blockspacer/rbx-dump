@@ -267,8 +267,8 @@ Class ShirtGraphic : CharacterAppearance
 Class Skin : CharacterAppearance [deprecated]
 	Property BrickColor Skin.SkinColor [deprecated]
 Class Chat : Instance [notCreatable]
-	Function void Chat:Chat(Instance partOrCharacter, string message, ChatColor color = Blue) [deprecated]
-	YieldFunction string Chat:FilterStringForPlayerAsync(string stringToFilter, Instance playerToFilterFor)
+	Function void Chat:Chat(Instance partOrCharacter, string message, ChatColor color = Blue)
+	YieldFunction string Chat:FilterStringForPlayerAsync(string stringToFilter, Instance playerToFilterFor) [deprecated]
 	Event Chat.Chatted(Instance part, string message, ChatColor color)
 Class ChatFilter : Instance [notCreatable]
 Class ClickDetector : Instance
@@ -293,7 +293,7 @@ Class ContentFilter : Instance
 Class ContentProvider : Instance
 	Property string ContentProvider.BaseUrl [readonly]
 	Property int ContentProvider.RequestQueueSize [readonly]
-	Function void ContentProvider:Preload(Content contentId)
+	Function void ContentProvider:Preload(Content contentId) [deprecated]
 	Function void ContentProvider:SetAssetUrl(string url) [LocalUserSecurity]
 	Function void ContentProvider:SetBaseUrl(string url) [LocalUserSecurity]
 	Function void ContentProvider:SetCacheSize(int count) [LocalUserSecurity]
@@ -1352,6 +1352,7 @@ Class BasePart : PVInstance [notbrowsable]
 	Property CoordinateFrame BasePart.CFrame
 	Property bool BasePart.CanCollide
 	Property Color3 BasePart.Color [deprecated]
+	Property Color3 BasePart.Color3uint8
 	Property PhysicalProperties BasePart.CustomPhysicalProperties
 	Property float BasePart.Elasticity
 	Property float BasePart.Friction
@@ -2205,15 +2206,13 @@ Class TouchInputService : Instance
 Class TouchTransmitter : Instance [notbrowsable] [notCreatable]
 Class TweenBase : Instance
 	Property PlayBackState TweenBase.PlayBackState [readonly]
-	Property int64 TweenBase.SomeInt64 [readonly]
-	Property long TweenBase.SomeLong [readonly]
 	Function void TweenBase:Cancel()
 	Function void TweenBase:Pause()
 	Function void TweenBase:Play()
 	Event TweenBase.Completed(PlayBackState playBackState)
-Class TweenV2 : TweenBase
-	Property Object TweenV2.Instance [readonly]
-	Property TweenInfo TweenV2.TweenInfo [readonly]
+Class Tween : TweenBase
+	Property Object Tween.Instance [readonly]
+	Property TweenInfo Tween.TweenInfo [readonly]
 Class TweenService : Instance [notCreatable]
 	Function Instance TweenService:Create(Instance instance, TweenInfo tweenInfo, Dictionary propertyTable)
 Class UserGameSettings : Instance
