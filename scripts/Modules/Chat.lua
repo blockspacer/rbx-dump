@@ -868,7 +868,11 @@ local function CreatePlayerChatMessage(settings, playerChatType, sendingPlayer, 
 			};
 			-- Check if they got moderated and put up a real message instead of Label
 			if chatMessage.Text == 'Label' and chatMessageDisplayText ~= 'Label' then
-				chatMessage.Text = string.rep(" ", numNeededSpaces) .. '[Content Deleted]'
+				local newMessage = "";
+				for i = 1, #this.RawMessageContent do
+					newMessage = newMessage .. '#';
+				end
+				chatMessage.Text = string.rep(" ", numNeededSpaces) .. newMessage
 			end
 			if this.SendingPlayer and Util.IsPlayerAdminAsync(this.SendingPlayer) then
 				chatMessage.TextColor3 = this.Settings.AdminTextColor
