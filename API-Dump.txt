@@ -927,8 +927,11 @@ Class HapticService : Instance [notCreatable]
 	Function bool HapticService:IsVibrationSupported(UserInputType inputType)
 	Function void HapticService:SetMotor(UserInputType inputType, VibrationMotor vibrationMotor, Tuple vibrationValues)
 Class HttpRbxApiService : Instance [notCreatable]
-	YieldFunction string HttpRbxApiService:GetAsync(string apiUrlPath, bool useHttps = true, ThrottlingPriority priority = Default) [RobloxScriptSecurity]
-	YieldFunction string HttpRbxApiService:PostAsync(string apiUrlPath, string data, bool useHttps = true, ThrottlingPriority priority = Default, HttpContentType content_type = ApplicationJson) [RobloxScriptSecurity]
+	Function string HttpRbxApiService:GetDocumentationUrl(string partialUrl) [RobloxScriptSecurity]
+	YieldFunction string HttpRbxApiService:GetAsync(string apiUrlPath, ThrottlingPriority priority = Default) [RobloxScriptSecurity]
+	YieldFunction string HttpRbxApiService:GetAsyncFullUrl(string url, ThrottlingPriority priority = Default) [RobloxScriptSecurity]
+	YieldFunction string HttpRbxApiService:PostAsync(string apiUrlPath, string data, ThrottlingPriority priority = Default, HttpContentType content_type = ApplicationJson) [RobloxScriptSecurity]
+	YieldFunction string HttpRbxApiService:PostAsyncFullUrl(string apiUrlPath, string data, ThrottlingPriority priority = Default, HttpContentType content_type = ApplicationJson) [RobloxScriptSecurity]
 Class HttpService : Instance [notCreatable]
 	Property bool HttpService.HttpEnabled [LocalUserSecurity]
 	Function string HttpService:GenerateGUID(bool wrapInCurlyBraces = true)
@@ -1795,6 +1798,8 @@ Class Pose : Instance
 	Function void Pose:AddSubPose(Instance pose)
 	Function Objects Pose:GetSubPoses()
 	Function void Pose:RemoveSubPose(Instance pose)
+Class RakService : Instance
+	Function void RakService:PushServer(string message)
 Class RayValue : Instance
 	Property Ray RayValue.Value
 	Event RayValue.Changed(Ray value)
