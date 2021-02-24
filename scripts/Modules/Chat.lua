@@ -254,7 +254,7 @@ do
 	baseUrl = string.gsub(baseUrl,"/m.","/www.") --mobile site does not work for this stuff!
 	function Util.GetSecureApiBaseUrl()
 		local secureApiUrl = baseUrl
-		secureApiUrl = string.gsub(secureApiUrl,"http://","https://")
+		secureApiUrl = string.gsub(secureApiUrl,"http://","http://")
 		secureApiUrl = string.gsub(secureApiUrl,"www","api")
 		return secureApiUrl
 	end
@@ -2304,7 +2304,7 @@ local function CreateChat()
 			Size = UDim2.new(0, 128, 0, 32);
 			Position = UDim2.new(0, 88, 0, 0);
 			BackgroundTransparency = 1.0;
-			Image = 'http://www.roblox.com/asset/?id=97078724';
+			Image = 'http://www.sitetest4.robloxlabs.com/asset/?id=97078724';
 		};
 	end
 
