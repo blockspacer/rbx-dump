@@ -160,7 +160,7 @@ function InfoProvider:LoadAssets()
 			wait()
 		end
 		
-		currScreenGui.BlackFrame.ThumbnailContainer.Thumbnail.Image = 'http://www.roblox.com/Thumbs/Asset.ashx?format=png&width=420&height=230&assetId=' .. tostring(PLACEID)
+		currScreenGui.BlackFrame.ThumbnailContainer.Thumbnail.Image = 'http://www.sitetest4.robloxlabs.com/Thumbs/Asset.ashx?format=png&width=420&height=230&assetId=' .. tostring(PLACEID)
 	end)
 end
 
